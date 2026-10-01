@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mitos e Verdades</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e9eef5;
+}
+
+/* Barra superior */
+.topo {
+    background: #6e9bc7;
+    height: 18px;
+}
+
+/* Página principal */
+.pagina {
+    width: 950px;
+    max-width: 95%;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    position: relative;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+/* X */
+.fechar {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    color: #e63946;
+    cursor: pointer;
+}
+
+.fechar:hover {
+    color: #900;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #163a5f;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Área dos cards */
+.cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Card */
+.card {
+    width: 45%;
+    padding: 20px;
+    text-align: center;
+
+    background: #fafafa;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+
+    border-radius: 8px;
+}
+
+/* Imagens */
+.card img {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+/* Títulos */
+.mito {
+    color: #c62828;
+}
+
+.verdade {
+    color: #1b5e20;
+}
+
+/* Botões */
+button {
+    background: #4169e1;
+    color: white;
+
+    border: none;
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2447a8;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 30px;
+
+    font-size: 13px;
+    color: #555;
+}
+
+/* Responsivo para celular */
+@media(max-width: 700px) {
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="topo"></div>
+
+<div class="pagina" id="pagina">
+
+    <!-- X -->
+    <span class="fechar" onclick="fecharPagina()">
+        &times;
+    </span>
+
+
+    <h1>Mitos e Verdades</h1>
+
+    <p class="subtitulo">
+        Informação e conhecimento ajudam a combater a desinformação.
+    </p>
+
+
+    <div class="cards">
+
+        <!-- MITO -->
+
+        <div class="card">
+
+            <h2 class="mito">
+                MITO
+            </h2>
+
+            <h3>
+                Vacinas causam doenças graves
+            </h3>
+
+            <img
+            src="https://images.unsplash.com/photo-1584362917165-526a968579e8"
+            alt="Vacinação">
+
+            <p>
+                Algumas pessoas acreditam que vacinas
+                causam doenças graves.
+            </p>
+
+            <button onclick="abrirExplicacao('mito')">
+                Saiba mais
+            </button>
+
+        </div>
+
+
+        <!-- VERDADE -->
+
+        <div class="card">
+
+            <h2 class="verdade">
+                VERDADE
+            </h2>
+
+            <h3>
+                Vacinas ajudam a prevenir doenças
+            </h3>
+
+            <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
+            alt="Profissionais da saúde">
+
+            <p>
+                A vacinação é uma importante estratégia
+                de saúde pública para prevenção de doenças.
+            </p>
+
+            <button onclick="abrirExplicacao('verdade')">
+                Saiba mais
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        Site Mitos e Verdades — Projeto Educacional — 2026
+    </footer>
+
+</div>
+
+
+<script>
+
+/* Fechar a página */
+function fecharPagina() {
+
+    document.getElementById("pagina").style.display = "none";
+
+}
+
+
+/* Informações dos botões */
+
+function abrirExplicacao(tipo) {
+
+    if(tipo === "mito") {
+
+        alert(
+            "MITO\n\n" +
+            "As vacinas passam por estudos e avaliações " +
+            "antes de serem disponibilizadas para a população."
+        );
+
+    }
+
+
+    if(tipo === "verdade") {
+
+        alert(
+            "VERDADE\n\n" +
+            "As vacinas são utilizadas para ajudar o organismo " +
+            "a desenvolver proteção contra determinadas doenças."
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
